@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `package`;
 CREATE TABLE `package` (
   `Plan` varchar(30) NOT NULL,
   `Price` int DEFAULT NULL,
-  `Duration` varchar(20) DEFAULT NULL,
+  `Active_Until` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Plan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-04 19:54:00
+-- Dump completed on 2022-11-05 21:17:59
