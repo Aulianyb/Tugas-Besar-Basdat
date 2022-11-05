@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `live_class`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `live_class` (
   `Class_ID` varchar(6) NOT NULL,
-  `Title` varchar(61) NOT NULL,
+  `Title` varchar(70) NOT NULL,
   `Grade` int NOT NULL,
   `Date` date NOT NULL,
-  `Username` varchar(15) NOT NULL,
+  `Username` varchar(16) NOT NULL,
   PRIMARY KEY (`Class_ID`),
   KEY `Username` (`Username`),
-  CONSTRAINT `live_class_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `teacher` (`Username`)
+  CONSTRAINT `live_class_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `user` (`Username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,7 +83,7 @@ CREATE TABLE `student_course` (
   `Course_ID` int NOT NULL,
   PRIMARY KEY (`Username`,`Course_ID`),
   KEY `Course_ID` (`Course_ID`),
-  CONSTRAINT `student_course_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `student` (`Username`),
+  CONSTRAINT `student_course_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `user` (`Username`),
   CONSTRAINT `student_course_ibfk_2` FOREIGN KEY (`Course_ID`) REFERENCES `course` (`Course_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,11 +106,11 @@ DROP TABLE IF EXISTS `student_liveclass`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student_liveclass` (
-  `Username` varchar(15) NOT NULL,
+  `Username` varchar(16) NOT NULL,
   `Class_ID` varchar(6) NOT NULL,
   PRIMARY KEY (`Username`,`Class_ID`),
   KEY `Class_ID` (`Class_ID`),
-  CONSTRAINT `student_liveclass_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `student` (`Username`),
+  CONSTRAINT `student_liveclass_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `user` (`Username`),
   CONSTRAINT `student_liveclass_ibfk_2` FOREIGN KEY (`Class_ID`) REFERENCES `live_class` (`Class_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -137,7 +137,7 @@ CREATE TABLE `teacher_course` (
   `Course_ID` int NOT NULL,
   PRIMARY KEY (`Username`,`Course_ID`),
   KEY `Course_ID` (`Course_ID`),
-  CONSTRAINT `teacher_course_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `teacher` (`Username`),
+  CONSTRAINT `teacher_course_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `user` (`Username`),
   CONSTRAINT `teacher_course_ibfk_2` FOREIGN KEY (`Course_ID`) REFERENCES `course` (`Course_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -161,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-05 15:16:17
+-- Dump completed on 2022-11-05 20:56:44
