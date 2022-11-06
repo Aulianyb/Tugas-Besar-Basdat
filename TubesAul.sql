@@ -16,23 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `assessment`
---
-
-DROP TABLE IF EXISTS `assessment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `assessment` (
-  `Assessment_ID` int NOT NULL AUTO_INCREMENT,
-  `Title` varchar(50) NOT NULL,
-  `Topic_ID` int NOT NULL,
-  PRIMARY KEY (`Assessment_ID`),
-  KEY `Topic_ID` (`Topic_ID`),
-  CONSTRAINT `assessment_ibfk_1` FOREIGN KEY (`Topic_ID`) REFERENCES `topic` (`Topic_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `assessment`
 --
 
@@ -41,22 +24,6 @@ LOCK TABLES `assessment` WRITE;
 INSERT INTO `assessment` VALUES (1,'﻿Quiz Perjalanan belajar menggunakan quipper video',1),(2,'Quiz Cerita Sukses Pengguna Quipper',2),(3,'Quiz Cara Daftar Quipper',3),(4,'Quiz Fitur Chapter Search',4),(5,'Quiz Fitur Subtitle dan Perkecil Layar',5),(6,'Quiz Fitur Rekomendasi Topik',6),(7,'Quiz Fitur Prestasi Belajar',7),(8,'Quiz Fitur Cek peluang',8),(9,'Quiz Cara Menggunakan Fitur Tanya Tutor',9),(10,'Quiz Cara Menggunakan Fitur Online Coach',10),(11,'Quiz Konsep Dasar Kosakata',11),(12,'Quiz Benar atau Salah',12),(13,'Quiz Argumentasi',13),(14,'Quiz Posisi',14),(15,'Quiz Urutan',15),(16,'Quiz Simpulan',16),(17,'Quiz Pola Bilangan',17),(18,'Quiz Pemahaman Visual',18),(19,'Quiz Pola Gambar ',19),(20,'Quiz Perhitungan Data',20),(21,'Quiz Operasi Bilangan',21),(22,'Quiz Perbandingan',22),(23,'Quiz Vocabulary',23),(24,'Quiz Barisan dan Deret',24),(25,'Quiz Aritmatika Sosial',25),(26,'Quiz Persamaan dan Pertidaksamaan',26),(27,'Quiz Fungsi',27),(28,'Quiz Logika Matematika',28),(29,'Quiz Bangun Datar',29),(30,'Quiz Bangun Ruang',30),(31,'Quiz Statistika dan Peluang',31),(32,'Quiz General Direction',32),(33,'Quiz Listening',33),(34,'Quiz Structure and Written Expression',34),(35,'Quiz Reading',35),(36,'Quiz TOEFL ITP Practice Test',36),(37,'Quiz Sistem Organ pada Manusia',37),(38,'Quiz Klasifikasi Mahluk Hidup',38),(39,'Quiz Pewarisan Sifat',39),(40,'Quiz Struktur dna Fungsi Jaringan',40),(41,'Quiz Bioteknologi',41),(42,'Quiz Pengukuran',42),(43,'Quiz Suhu dan Kalor',43),(44,'Quiz Gerak dan Gaya',44),(45,'Quiz Tekanan',45),(46,'Quiz Getaran dan Gelombang',46),(47,'Quiz Alat Optik',47),(48,'Quiz Gagasan Utama',48),(49,'Quiz Teks Ulasan',49),(50,'Quiz Laporan',50),(51,'Quiz Ejaan dan Tanda Baca',51),(52,'Quiz Cerpen dan Fabel',52),(53,'Quiz Analisis Sastra',53),(54,'Quiz Aljabar',54),(55,'Quiz Garis dan Sudut',55),(56,'Quiz Himpulan dan Relasi',56),(57,'Quiz Persamaan Garis Lurus',57),(58,'Quiz Pertidaksamaan',58),(59,'Quiz Barisan dan Deret',59),(60,'Quiz Bangun Datar',60),(61,'Quiz Bangun Ruang',61),(62,'Quiz Preposition',62),(63,'Quiz Conjunction',63),(64,'Quiz Word Meaning',64),(65,'Quiz Synonym',65),(66,'Quiz Reference',66),(67,'Quiz Main Idea',67),(68,'Quiz Percepatan Gravitasi',68),(69,'Quiz Jam Bandul',69),(70,'Quiz Charging HP 30 detik',70),(71,'Quiz Jarak dan Perpindahan',71),(72,'Quiz Cara Kerja GPS',72),(73,'Quiz Hitung Ketinggian dengan Stopwatch',73),(74,'Quiz Cara Kerja Sabuk Pengaman',74),(75,'Quiz American Football',75),(76,'Quiz Pasang Surut Air Laut',76),(77,'Quiz Diet Ala Fisika',77),(78,'Quiz Hiung Kadar Karbohidrat',78),(79,'Quiz Jadi Miliarder dengan matematika',79),(80,'Quiz Matriks bantu pak tani',80),(81,'Quiz Badan Kecil jago Sudo',81),(82,'Quiz Pilih Investasi mana ya?',82),(83,'Quiz Ancaman persatuan Indonesia',83),(84,'Quiz Sumpah pemersatu Nusantara',84),(85,'Quiz Makna dari Jeans',85),(86,'Quiz Orang kota itu sombong?!',86),(87,'Quiz Cara Panjat Sosial',87),(88,'Quiz Identitas Anak Punk',88),(89,'Quiz Merawat Bibir',89),(90,'Quiz Merawat Kulit Wajah',90),(91,'Quiz Mengatasi Jerawat',91),(92,'Quiz Tangkal Sinar UV',92),(93,'Quiz Basmi Ketombe',93),(94,'Quiz Pentingnya Kesehatan Mental',94),(95,'Quiz Minat dan Bakat',95),(96,'Quiz Imposter Syndrome',96),(97,'Quiz Stop Bullying',97),(98,'Quiz Teks Deskripsi',98),(99,'Quiz Teks Narasi',99),(100,'Quiz Teks Prosedur',100),(101,'Quiz Teks Laporan',101),(102,'Quiz Literasi Fiksi',102),(103,'Quiz Literasi NonFiksi',103),(104,'Quiz Puisi Rakyat',104),(105,'Quiz Fabel dan Legenda',105),(106,'Quiz Greeting',106),(107,'Quiz Thanking',107),(108,'Quiz Apologizing',108),(109,'Quiz Introduction',109),(110,'Quiz Time',110),(111,'Quiz Information about Things',111),(112,'Quiz Description Things',112),(113,'Quiz Asking for Description',113),(114,'Quiz Descriptive Text',114),(115,'Quiz Song Appreciation',115),(116,'Quiz Bilangan Bulat',116),(117,'Quiz Pecahan',117),(118,'Quiz KPK dan FPB',118),(119,'Quiz Operasi Himpunan',119),(120,'Quiz Dasar Geografi',120),(121,'Quiz Jagad Raya',121),(122,'Quiz Tata Surya',122),(123,'Quiz Litosfer',123),(124,'Quiz Pedosfer',124),(125,'Quiz Atmosfer',125),(126,'Quiz Hidrosfer',126),(127,'Quiz Konsep Ekonomi',127),(128,'Quiz Produsen dan Konsumen',128),(129,'Quiz Pasar dan Harga Pasar',129),(130,'Quiz Struktur Pasar',130),(131,'Quiz Inflasi dan Indeks Harga',131),(132,'Quiz Uang',132),(133,'Quiz Sifat Koligatif Larutan',133),(134,'Quiz Reaksi Redoks',134),(135,'Quiz Sel Volta',135),(136,'Quiz Korosi Logam',136),(137,'Quiz Elektrolisis',137),(138,'Quiz Kimia Unsur',138),(139,'Quiz Senyawa Karbon',139),(140,'Quiz Polimer',140),(141,'Quiz Rangkaian',141),(142,'Quiz Listrik Statis',142),(143,'Quiz Gaya Magnetik',143),(144,'Quiz Induksi Elektromagnetik',144),(145,'Quiz Teknologi Digital',145),(146,'Quiz Inti Atom',146),(147,'Quiz Fenomena Kuantum',147),(148,'Quiz Tes Penguasaan Kota Kata',148),(149,'Quiz Membaca Hasil Tes',149),(150,'Quiz Latihan Soal',150);
 /*!40000 ALTER TABLE `assessment` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `course`
---
-
-DROP TABLE IF EXISTS `course`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `course` (
-  `Course_ID` int NOT NULL AUTO_INCREMENT,
-  `Title` varchar(50) NOT NULL,
-  `Description` varchar(100) DEFAULT NULL,
-  `Grade` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`Course_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `course`
@@ -69,23 +36,6 @@ INSERT INTO `course` VALUES (108,'Informasi Tentang Quipper','Tutorial pemakaian
 UNLOCK TABLES;
 
 --
--- Table structure for table `topic`
---
-
-DROP TABLE IF EXISTS `topic`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `topic` (
-  `Topic_ID` int NOT NULL AUTO_INCREMENT,
-  `Title` varchar(50) NOT NULL,
-  `Course_ID` int NOT NULL,
-  PRIMARY KEY (`Topic_ID`),
-  KEY `Course_ID` (`Course_ID`),
-  CONSTRAINT `topic_ibfk_1` FOREIGN KEY (`Course_ID`) REFERENCES `course` (`Course_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `topic`
 --
 
@@ -94,24 +44,6 @@ LOCK TABLES `topic` WRITE;
 INSERT INTO `topic` VALUES (1,'﻿Perjalanan belajar menggunakan quipper video',108),(2,'Cerita Sukses Pengguna Quipper',108),(3,'Cara Daftar Quipper',108),(4,'Fitur Chapter Search',108),(5,'Fitur Subtitle dan Perkecil Layar',108),(6,'Fitur Rekomendasi Topik',108),(7,'Fitur Prestasi Belajar',108),(8,'Fitur Cek peluang',108),(9,'Cara Menggunakan Fitur Tanya Tutor',108),(10,'Cara Menggunakan Fitur Online Coach',108),(11,'Konsep Dasar Kosakata',109),(12,'Benar atau Salah',109),(13,'Argumentasi',109),(14,'Posisi',109),(15,'Urutan',109),(16,'Simpulan',109),(17,'Pola Bilangan',109),(18,'Pemahaman Visual',109),(19,'Pola Gambar ',109),(20,'Perhitungan Data',109),(21,'Operasi Bilangan',109),(22,'Perbandingan',109),(23,'Vocabulary',109),(24,'Barisan dan Deret',109),(25,'Aritmatika Sosial',109),(26,'Persamaan dan Pertidaksamaan',109),(27,'Fungsi',109),(28,'Logika Matematika',109),(29,'Bangun Datar',109),(30,'Bangun Ruang',109),(31,'Statistika dan Peluang',109),(32,'General Direction',110),(33,'Listening',110),(34,'Structure and Written Expression',110),(35,'Reading',110),(36,'TOEFL ITP Practice Test',110),(37,'Sistem Organ pada Manusia',111),(38,'Klasifikasi Mahluk Hidup',111),(39,'Pewarisan Sifat',111),(40,'Struktur dan Fungsi Jaringan',111),(41,'Bioteknologi',111),(42,'Pengukuran',111),(43,'Suhu dan Kalor',111),(44,'Gerak dan Gaya',111),(45,'Tekanan',111),(46,'Getaran dan Gelombang',111),(47,'Alat Optik',111),(48,'Gagasan Utama',111),(49,'Teks Ulasan',111),(50,'Laporan',111),(51,'Ejaan dan Tanda Baca',111),(52,'Cerpen dan Fabel',111),(53,'Analisis Sastra',111),(54,'Aljabar',111),(55,'Garis dan Sudut',111),(56,'Himpulan dan Relasi',111),(57,'Persamaan Garis Lurus',111),(58,'Pertidaksamaan',111),(59,'Barisan dan Deret',111),(60,'Bangun Datar',111),(61,'Bangun Ruang',111),(62,'Preposition',111),(63,'Conjunction',111),(64,'Word Meaning',111),(65,'Synonym',111),(66,'Reference',111),(67,'Main Idea',111),(68,'Percepatan Gravitasi',112),(69,'Jam Bandul',112),(70,'Charging HP 30 detik',112),(71,'Jarak dan Perpindahan',112),(72,'Cara Kerja GPS',112),(73,'Hitung Ketinggian dengan Stopwatch',112),(74,'Cara Kerja Sabuk Pengaman',112),(75,'American Football',112),(76,'Pasang Surut Air Laut',112),(77,'Diet Ala Fisika',112),(78,'Hiung Kadar Karbohidrat',112),(79,'Jadi Miliarder dengan matematika',112),(80,'Matriks bantu pak tani',112),(81,'Badan Kecil jago Sudo',112),(82,'Pilih Investasi mana ya?',112),(83,'Ancaman persatuan Indonesia',112),(84,'Sumpah pemersatu Nusantara',112),(85,'Makna dari Jeans',112),(86,'Orang kota itu sombong?!',112),(87,'Cara Panjat Sosial',112),(88,'Identitas Anak Punk',112),(89,'Merawat Bibir',113),(90,'Merawat Kulit Wajah',113),(91,'Mengatasi Jerawat',113),(92,'Tangkal Sinar UV',113),(93,'Basmi Ketombe',113),(94,'Pentingnya Kesehatan Mental',113),(95,'Minat dan Bakat',113),(96,'Imposter Syndrome',113),(97,'Stop Bullying',113),(98,'Teks Deskripsi',114),(99,'Teks Narasi',114),(100,'Teks Prosedur',114),(101,'Teks Laporan',114),(102,'Literasi Fiksi',114),(103,'Literasi NonFiksi',114),(104,'Puisi Rakyat',114),(105,'Fabel dan Legenda',114),(106,'Greeting',114),(107,'Thanking',114),(108,'Apologizing',114),(109,'Introduction',114),(110,'Time',114),(111,'Information about Things',114),(112,'Description Things',114),(113,'Asking for Description',114),(114,'Descriptive Text',114),(115,'Song Appreciation',114),(116,'Bilangan Bulat',114),(117,'Pecahan',114),(118,'KPK dan FPB',114),(119,'Operasi Himpunan',114),(120,'Dasar Geografi',115),(121,'Jagad Raya',115),(122,'Tata Surya',115),(123,'Litosfer',115),(124,'Pedosfer',115),(125,'Atmosfer',115),(126,'Hidrosfer',115),(127,'Konsep Ekonomi',115),(128,'Produsen dan Konsumen',115),(129,'Pasar dan Harga Pasar',115),(130,'Struktur Pasar',115),(131,'Inflasi dan Indeks Harga',115),(132,'Uang',115),(133,'Sifat Koligatif Larutan',115),(134,'Reaksi Redoks',115),(135,'Sel Volta',115),(136,'Korosi Logam',115),(137,'Elektrolisis',115),(138,'Kimia Unsur',115),(139,'Senyawa Karbon',115),(140,'Polimer',115),(141,'Rangkaian',115),(142,'Listrik Statis',115),(143,'Gaya Magnetik',115),(144,'Induksi Elektromagnetik',115),(145,'Teknologi Digital',115),(146,'Inti Atom',115),(147,'Fenomena Kuantum',115),(148,'Tes Penguasaan Kota Kata',116),(149,'Membaca Hasil Tes',116),(150,'Latihan Soal',116);
 /*!40000 ALTER TABLE `topic` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `video`
---
-
-DROP TABLE IF EXISTS `video`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `video` (
-  `Video_ID` int NOT NULL AUTO_INCREMENT,
-  `Title` varchar(50) NOT NULL,
-  `Duration` int NOT NULL,
-  `Topic_ID` int NOT NULL,
-  PRIMARY KEY (`Video_ID`),
-  KEY `Topic_ID` (`Topic_ID`),
-  CONSTRAINT `video_ibfk_1` FOREIGN KEY (`Topic_ID`) REFERENCES `topic` (`Topic_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `video`
@@ -132,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-03 22:32:33
+-- Dump completed on 2022-11-06 21:02:17
